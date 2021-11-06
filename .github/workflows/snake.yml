@@ -31,13 +31,13 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
+          repo-token: "${{ secrets.TOKEN}}"
           github_token: $
           branch: master
           force: true
 
       - uses: crazy-max/ghaction-github-pages@v2.1.3
         with:
-          repo-token: "${{ secrets.TOKEN}}"
           target_branch: output
           build_dir: dist
         env:
